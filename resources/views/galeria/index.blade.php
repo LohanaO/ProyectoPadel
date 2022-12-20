@@ -42,7 +42,7 @@
         <div class="contenedor1 margin">
             <h2 class="titulo"> Galeria de fotos</h2>
             <div class="regresar">
-                <a  href="{{url('galeria/subir')}}">cargar Foto</a>
+                <a  href="{{url('galeria/form')}}">cargar Foto</a>
                 </div>
             <section class="fotos">
                 <div class="contenedor1">

@@ -24,7 +24,7 @@ class GaleriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('galeria.create');
     }
 
     /**
@@ -35,7 +35,11 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'foto'=>'required|image|max:2048',
+        ]);
+        $fotos=$request->all();
+        return response()->json($fotos);
     }
 
     /**

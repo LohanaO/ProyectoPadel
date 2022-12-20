@@ -32,7 +32,7 @@
                     
                 </ul>
             </li>
-            <li class="menu__item"><a href="{{url('galeria/index')}}" class="menu__link">Galeria</a></li>
+            <li class="menu__item"><a href="{{url('galeria')}}" class="menu__link">Galeria</a></li>
             <li class="menu__item"><a href="{{url('contacto/mostrarC')}}" class="menu__link">Contacto</a></li>
                 
         </ul>
