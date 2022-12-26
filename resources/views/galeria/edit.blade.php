@@ -11,14 +11,15 @@
     <link rel="stylesheet"  href="{{asset ('css/style.css')}}">
 </head>
 <body>
-     @include('partials.menu')
+    @include('partials.menu')
     <div class="fondo">
         <div class="cont-formulario">
             <form action="{{url('/galeria')}} "method="POST" enctype="multipart/form-data" >
                 @csrf
             <fieldset>
-                <legend class="subir-foto"> Subir Foto</legend>
+                <legend class="subir-foto"> actualiazar Foto</legend>
                     <div class="subir-foto">
+                        <img src="{{ asset('storage') . '/' . $galeria->imagen }}" alt="imgen">
                     <label for="imagen">Elije una foto</label>
                     <input type="file" name="imagen" id="imagen" accept="image/*">
                    

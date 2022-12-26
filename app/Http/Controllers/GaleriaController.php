@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Galeria;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
 
 class GaleriaController extends Controller
 {
@@ -14,7 +17,10 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-       return view('galeria.index'); 
+        $imagenes['galerias']=galeria::paginate(8);
+      
+       return view('galeria.index',$imagenes); 
+        
     }
 
     /**
@@ -36,10 +42,18 @@ class GaleriaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'foto'=>'required|image|max:2048',
+            'imagen'=>'required|image|max:2048'
         ]);
-        $fotos=$request->all();
-        return response()->json($fotos);
+        $datos = request()->except('_token');
+        if($request->hasFile('imagen')){
+        $datos['imagen']=$request->file('imagen')->store('uploads','public');
+        }
+        galeria::insert($datos); // Inserto los datos en la BD
+        return redirect('galeria');
+        
+   
+       
+
     }
 
     /**
@@ -59,9 +73,11 @@ class GaleriaController extends Controller
      * @param  \App\Models\Galeria  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Galeria $galeria)
+    public function edit($id)
     {
-        //
+        $galeria = galeria::findOrFail($id);
+    
+        return view ('galeria.edit');
     }
 
     /**

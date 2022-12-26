@@ -14,13 +14,11 @@ use App\Http\Controllers\GaleriaController;
 |
 */
 
-Route::get('/', function () {
-    return view('inicio');
-});
 
-Route::get('/nosotros', function () {
-    return view('nosotros');
-});
+
+route::view('/','inicio');
+
+route::view('/ nosotros','nosotros');
 
 Route::resource('galeria', GaleriaController::class );
 
@@ -28,13 +26,7 @@ Route::get('galeria/foto', function () {
     return view('galeria.foto');
 });
 
-Route::get('galeria/subir', function () {
-    return view('galeria.subir');
-});
-
-Route::get('contacto/mostrarC', function () {
-    return view('contacto.mostrarC');
-});
+route::view('contacto/mostrarC','contacto/mostrarC');
 
 
 

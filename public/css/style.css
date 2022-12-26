@@ -19,6 +19,21 @@ a{
     text-decoration: none;
 }
 
+.inline{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.inline a{
+    color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inline a:hover{
+    background-color: var(--blanco);
+    color: var(--primary-Color);
+}
 
 .nav-bar{
     background-color: var(--primary-Color);
