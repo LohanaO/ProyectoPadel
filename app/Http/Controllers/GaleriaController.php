@@ -49,7 +49,7 @@ class GaleriaController extends Controller
         $datos['imagen']=$request->file('imagen')->store('uploads','public');
         }
         galeria::insert($datos); // Inserto los datos en la BD
-        return redirect('galeria');
+        return redirect('galeria')->with('mensaje', ' Imagen agregada con éxito.');
         
    
        
@@ -77,7 +77,7 @@ class GaleriaController extends Controller
     {
         $galeria = galeria::findOrFail($id);
     
-        return view ('galeria.edit');
+        return view ('galeria.edit', compact('galeria'));
     }
 
     /**
@@ -87,10 +87,30 @@ class GaleriaController extends Controller
      * @param  \App\Models\Galeria  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Galeria $galeria)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'imagen'=>'required|image|max:2048'
+        ]);
+
+        $galeria = Request()->except(['_token', '_method']);
+
+        if($request->hasFile('imagen')){
+
+            $galeria = galeria::findOrFail($id);
+
+            Storage::delete('public/' . $galeria->imagen);
+
+            $datosGaleria['imagen'] = $request->file('imagen')->store('uploads','public');
+        }
+
+        galeria::where('id', '=', $id)->update($datosGaleria);
+
+        $galeria = galeria::findOrFail($id);
+
+        return redirect('galeria');
+    
+}
 
     /**
      * Remove the specified resource from storage.
@@ -98,8 +118,13 @@ class GaleriaController extends Controller
      * @param  \App\Models\Galeria  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Galeria $galeria)
+    public function destroy($id)
     {
-        //
+        $galeria = Galeria::findOrFail($id);
+
+        Storage::delete('public/' . $galeria->imagen);
+
+        Galeria::destroy($id);
+        return redirect('galeria')->with('mensaje','Imagen eliminada correctamente.');
     }
 }

@@ -1,3 +1,5 @@
+
+
 :root{
     --primary-Color:#030586;
     --secundary-color:#555;
@@ -12,6 +14,9 @@
    
 }
 body{
+    background-image: url(../img/4cbbc871-c9a2-439f-bbd4-815e44a135ee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     
 }
@@ -25,14 +30,30 @@ a{
     justify-content: space-evenly;
 }
 
-.inline a{
+.inline a, button {
     color: var(--blanco);
     font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
-.inline a:hover{
+
+
+.inline button{
+   background: none;
+   border: none;
+    
+}
+.inline a:hover, button:hover{
     background-color: var(--blanco);
     color: var(--primary-Color);
+}
+
+small{
+    background-color: var(--blanco);
+    color:var(--primary-Color);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav-bar{
@@ -125,9 +146,7 @@ a{
 }
 
 .fondo{
-    background-image: url(../img/4cbbc871-c9a2-439f-bbd4-815e44a135ee.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    
 }
 
 .container-slider{
@@ -337,7 +356,7 @@ a{
 	font-size: 40px;
 	text-align: center;
     color: var(--blanco);
-    margin-top: -130PX;
+   
     font-family: var(--fuentePrincipal);
     
    
@@ -360,35 +379,7 @@ a{
 	float: right;
 }
 
-.paginacion {
-	width: 100%;
-	margin-bottom: 30px;
-	overflow: hidden;
-}
 
-.paginacion a{
-	display: inline-block;
-	padding: 15px 20px;
-	border-radius: 50px;
-	border:1px solid rgba(255,255,255,.2);
-	-webkit-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
-    color: var(--blanco);
-}
-
-.paginacion a:hover {
-	border:1px solid #fff;
-	text-decoration: none;
-}
-
-.paginacion .izquierda .fa {
-	margin-right: 10px;
-}
-
-.paginacion .derecha .fa {
-	margin-left: 10px;
-}
 
 .foto {
 	width: 100%;
@@ -485,6 +476,10 @@ input[type="file"]{
     margin-top: 10px;
     font-size: 20px;
     font-family: var(--fuentePrincipal);
+ }
+
+ .submit a{
+    color : var(--blanco);
  }
 
 .formulario .submit:hover {
@@ -604,6 +599,13 @@ input[type="file"]{
     margin-top:0
 }
 
+
+.pag{
+   display: flex;
+   justify-content: center;
+   margin-bottom: -5px;
+   
+}
 
 
 }

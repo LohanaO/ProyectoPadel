@@ -7,7 +7,17 @@ body{
     background-color: $grisOscuro;
     
 }
+
 a{
     text-decoration: none;
 }
+
+small{
+    background-color: var(--blanco);
+    color:var(--primary-Color);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 

@@ -23,6 +23,12 @@
                     <input type="file" name="imagen" id="imagen" accept="image/*">
                    
                     </div>
+                    @error('imagen')
+                    <br>
+                    <small>{{$message}}</small>
+                    <br>
+                        
+                    @enderror
               
             </fieldset>
            

@@ -14,20 +14,34 @@
     @include('partials.menu')
     <div class="fondo">
         <div class="cont-formulario">
-            <form action="{{url('/galeria')}} "method="POST" enctype="multipart/form-data" >
+            <form action="{{url('/galeria/'.$galeria->id)}} "method="POST" enctype="multipart/form-data" >
                 @csrf
+               {{method_field('PATCH')}}
             <fieldset>
                 <legend class="subir-foto"> actualiazar Foto</legend>
+                <img src="{{ asset('storage') . '/' . $galeria->imagen }}" alt="Imagen" width="350px">
                     <div class="subir-foto">
-                        <img src="{{ asset('storage') . '/' . $galeria->imagen }}" alt="imgen">
+                       
                     <label for="imagen">Elije una foto</label>
                     <input type="file" name="imagen" id="imagen" accept="image/*">
                    
                     </div>
+                    
+                    @error('imagen')
+                    <br>
+                    <small>{{$message}}</small>
+                    <br>
+                        
+                    @enderror
+              
               
             </fieldset>
            
-            <input class="submit" type="submit" value="subir foto">
+            <input class="submit" type="submit" value="Actualizar foto">
+
+            <div class="submit">
+                <a  href="{{url('galeria')}}">Volver</a>
+            </div>
             </form>
 
         </div>
