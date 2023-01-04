@@ -12,7 +12,7 @@
 </head>
 <body>
     @include('partials.menu')
-    <div class="contenedor fondo">
+    <div class="contenedor-galeria ">
         <div class="container-slider">
         <div class="slider" id="slider">
         <div class="slider__section">

@@ -108,7 +108,7 @@ class GaleriaController extends Controller
 
         $galeria = galeria::findOrFail($id);
 
-        return redirect('galeria');
+        return redirect('galeria')->with('mensaje', ' Imagen Actualizada con éxito.');
     
 }
 

@@ -1,0 +1,152 @@
+
+@use "variables" as v;
+@use "general" as g;
+@use "mixins" as m;
+
+.contenedor{
+    min-height: calc(100vh);
+    padding-top: 80px;
+    max-width: 482px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+/*contenedor nosotros*/
+.contenedor-section{
+    width: 100%;
+    padding: 20px;
+    }
+    .contenedor--imagen{
+        width: 100%;
+        box-shadow: 0 0 0 5px #ccc;
+            img{
+            width:100%;
+    }
+
+    }
+        p{
+            color:v.$blanco;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+/*contenedor galeria*/
+.contenedor-galeria{
+    min-height: calc(100vh);
+    padding: 30px;
+    padding-top: 85px;
+   
+    .contenedor1 {
+        max-width: 1000px;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    .thumb {
+    
+        &:hover{
+            outline:5px solid rgba(255,255,255,1);
+        }
+        a{
+            display: block;
+        }
+        img{
+            vertical-align: top;
+            width: 100%;
+        }
+        
+    }
+    }
+}
+
+.thumb{
+    width: 45%;
+    outline:5px solid rgba(255,255,255,0);
+	-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,.8);
+	box-shadow: 2px 2px 3px rgba(0,0,0,.8);
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+@include m.pantalla{
+    .contenedor-galeria{
+        padding: 100px;
+    .thumb {
+        width: 22%;
+        margin-bottom: 30px;
+        outline:5px solid rgba(255,255,255,0);
+        -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,.8);
+        box-shadow: 2px 2px 3px rgba(0,0,0,.8);
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+}
+}
+
+
+
+
+   
+
+
+@include m.pantalla{
+
+    .contenedor{
+        max-width: 1200px;
+        padding-left: 100px;
+    }
+    .contenedor-section{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 50px;
+        padding-top: 35px;
+        .contenedor--imagen{
+            width: 2000px;
+            
+         
+           
+        }
+
+       p{
+        
+            width: 80%;
+            
+        }
+       }
+
+
+       
+        
+    }
+/*contenedor formulario*/
+.cont-formulario{
+    width: 100%;
+    padding-top: 20px;
+
+    
+}
+.card{
+    width: 100%;
+    border:2px solid rgba(255,255,255,.2);
+  
+    img{
+        width:80%;
+        margin: 35px;
+    }
+    
+}
+   
+@include m.pantalla{
+    .card{
+       max-width: 90%;
+       margin-bottom: 15px;
+        img{
+            width: 50%;
+        }
+    }
+}
+

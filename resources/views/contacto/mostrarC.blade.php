@@ -10,6 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css','resources/scss/app.scss','resources/js/app.js'])
 <body>
-     <h1>hola</h1> 
+
+     @include('partials/menu')
+
+     <div class="contenedor">
+        
+     </div>
+     
+     @include('partials.footer')
+
+
+</body>
 </body>
 </html>

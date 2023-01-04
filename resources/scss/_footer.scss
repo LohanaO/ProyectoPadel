@@ -1,0 +1,72 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.footer-content{
+    height: 100%;
+    background-color: v.$gris-claro;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    .contact-us{
+        width: 90%;
+        color: #fff;
+    }
+    .brand{
+        font-weight: 500;
+        font-size: 20px;
+        font-family: v.$arial;
+        p{
+            font-weight: 500;
+            
+    
+    }
+    
+  
+       
+    }
+     .social-media{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .social-media-icon{
+            display: inline-block;
+            margin-left: 20px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            &:hover{
+                background:#ffffff;
+                color: var(--primary-color);
+                
+                }
+            }
+             i{
+                font-size: 30px;
+                line-height: 60px;
+            }
+        }
+        
+    }
+
+
+    
+@include m.pantalla{
+
+    .footer-content{
+        flex-wrap: nowrap;
+    }
+    .contact-us{
+        width: 40%;
+        
+    }
+    .social-media{
+        width: 50%;
+        
+        
+    }
+}

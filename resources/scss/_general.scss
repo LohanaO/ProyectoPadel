@@ -1,11 +1,15 @@
+@use "variables" as v;
+@use "mixins" as m;
+
 *{
     box-sizing: border-box;
    
 }
 body{
+    background-image: url(../img/4cbbc871-c9a2-439f-bbd4-815e44a135ee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
-    background-color: $grisOscuro;
-    
 }
 
 a{
@@ -13,11 +17,93 @@ a{
 }
 
 small{
-    background-color: var(--blanco);
-    color:var(--primary-Color);
+    background-color: v.$blanco;
+    color:v.$azul;
     font-weight: bold;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.inline{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.pag{
+    display: flex;
+    justify-content: center;
+    margin-bottom: -5px;
+    
+ }
+
+@include m.pantalla{
+    .inline{
+        width: 100%;
+      
+    }
+   
+     
+}
+
+
+
+.inline{
+    button {
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    border: none;
+    color: v.$blanco;
+   
+
+    cursor: pointer;
+    &:hover{
+        background-color:v.$blanco;
+        color: v.$azul;
+    }
+    }
+    a{
+        color:v.$blanco;
+        font-size: 15px;
+   
+        &:hover{
+            background-color:v.$blanco;
+            
+        }
+    }
+}
+
+
+
+
+
+.mostrar{
+    margin-left: 0;
+}
+
+.col{
+    flex-direction: column;
+}
+
+.top{
+    margin-top:0
+}
+
+.margin{
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.titulo{
+   
+	font-size: 30px;
+	text-align: center;
+    color: v.$blanco;
+    font-family: v.$fuentePrincipal;
+    
+   
+}
+
 
 

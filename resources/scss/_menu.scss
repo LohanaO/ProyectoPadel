@@ -1,0 +1,119 @@
+
+@use "variables" as v;
+@use "general" as g;
+@use "mixins" as m;
+
+
+header{
+    position: fixed;
+    width: 100%;
+}
+
+.nav-bar{
+    background-color: v.$azul;
+    padding:18px;
+    display: block;
+    color: v.$blanco;
+    cursor:pointer;
+    font-size: 1.5em;
+    width: 100%;
+    font-family: v.$fuentePrincipal; 
+}
+
+.Menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: v.$gris-claro;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: 10;
+
+        .submenu{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      
+        
+
+        
+        }
+
+        .menu__link{
+            &:hover{
+               background-color: v.$grisOscuro;
+            }
+        }
+
+    }
+  
+
+
+
+.menu__link{
+    display: block;
+    padding: 20px;
+    color:v.$blanco;
+    font-size: 1.2em;
+    transition: all 0.5s;
+    font-family: v.$fuentePrincipal;
+  
+    
+}
+
+.submenu{
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.submenu {
+    .menu__link{
+    background-color: v.$grisOscuro;
+    padding-left: 50px;
+}
+}
+
+.submenu{
+    &:hover{
+    .menu__link{
+    &:hover{
+    background-color:v.$gris-claro;
+}
+    }
+}
+}
+@include m.pantalla{
+    .nav-bar{
+        display: none;
+    }
+  .Menu{
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .container-submenu{
+    position: relative;
+  }
+  .submenu {
+    position:absolute;
+    top: 60px;
+    width: 200px;
+    overflow: visible;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .container-submenu{
+    &:hover
+    .submenu{
+    opacity: 1;
+    visibility: visible;
+            }
+
+  }
+}
+

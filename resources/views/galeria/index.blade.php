@@ -9,16 +9,16 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset ('css/style.css')}}">
+    @vite(['resources/css/app.css','resources/scss/app.scss','resources/js/app.js'])
    
 </head>
 <body>
   @include('partials.menu')
-    <div class="contenedor fondo">
-        <div class="contenedor1 margin">
+    <div class="contenedor-galeria ">
+        <div class="">
             <h2 class="titulo"> Galeria de fotos</h2>
             <div class="regresar">
-                <a  href="{{url('galeria/create')}}">cargar Foto</a>
+                <a  href="{{url('galeria/create')}}">Cargar Foto</a>
                 </div>
                 @if (Session::has('mensaje'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">

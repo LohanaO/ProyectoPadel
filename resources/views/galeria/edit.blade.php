@@ -8,17 +8,19 @@
     <script src="https://kit.fontawesome.com/17a430a055.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="{{asset ('css/style.css')}}">
+ 
+    @vite(['resources/css/app.css','resources/scss/app.scss','resources/js/app.js'])
+
 </head>
 <body>
     @include('partials.menu')
-    <div class="fondo">
+    <div class="contenedor">
+        <h2 class="titulo">Actualizar una Foto</h2>
         <div class="cont-formulario">
             <form action="{{url('/galeria/'.$galeria->id)}} "method="POST" enctype="multipart/form-data" >
                 @csrf
                {{method_field('PATCH')}}
-            <fieldset>
-                <legend class="subir-foto"> actualiazar Foto</legend>
+                <div class="card">
                 <img src="{{ asset('storage') . '/' . $galeria->imagen }}" alt="Imagen" width="350px">
                     <div class="subir-foto">
                        
@@ -34,12 +36,11 @@
                         
                     @enderror
               
-              
-            </fieldset>
+                </div>
            
-            <input class="submit" type="submit" value="Actualizar foto">
+            <input class="submit boton" type="submit" value="Actualizar foto">
 
-            <div class="submit">
+            <div class="submit boton">
                 <a  href="{{url('galeria')}}">Volver</a>
             </div>
             </form>
@@ -51,7 +52,6 @@
 
     
 @include('partials.footer')
-<script src="./js/slider.js"></script>
-<script src="./js/menu.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,84 @@
+@use "variables" as v;
+@use "general" as g;
+@use "mixins" as m;
+
+
+
+.regresar{
+	padding: 5px 10px;
+	margin-bottom: 30px;
+	display: inline-block;
+	border-radius: 50px;
+	font-size: 15px;
+	border:1px solid rgba(255,255,255,.2);
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+    margin-left: 0;
+    a{
+        color: v.$blanco;
+    }
+    &:hover{
+        border:1px solid #fff;
+	    text-decoration: none;
+    }
+    
+}
+
+@include m.pantalla{
+    .regresar{
+        font-size: 20px};
+}
+
+.subir-foto{
+    color:v.$blanco;
+    font-family: v.$fuentePrincipal;
+    padding: 30px;
+
+}
+input[type="file"]{
+    color: v.$blanco;
+    
+}
+
+@include m.pantalla{
+    input[type="file"]{
+        font-size: 20px;
+        
+    }
+
+    .titulo{
+        font-size: 40px;
+    }
+}
+
+
+
+
+
+.submit{
+	display: inline-block;
+	text-align: center;
+	color:#fff;
+	padding: 8px 20px;
+	border-radius: 50px;
+	border:1px solid rgba(255,255,255,.2);
+	background: none;
+	cursor: pointer;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: v.$fuentePrincipal;
+    &:hover{
+        border:1px solid rgba(255,255,255,1);
+    }
+    a{
+        color: v.$blanco;
+    }
+ }
+
+ .boton{
+    margin-bottom: 10px;
+ }
