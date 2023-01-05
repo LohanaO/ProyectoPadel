@@ -14,8 +14,47 @@
      @include('partials/menu')
 
      <div class="contenedor">
-        
-     </div>
+         <h2 class="titulo">Formulario de contacto</h2>
+                <div class="card">
+                    <form class="formulario" action="">
+                   <div>
+                    <form action="">
+                    <label for="nombre"> Nombre
+                        <input type="text" name="nombre">
+                    </label>
+                   </div>
+                   <div>
+                    <label class="label" for="apellido"> Apellido
+                        <input type="text" name="apellido">
+                    </label>
+                   </div>
+                   <div>
+                    <label class="label" for="mail"> Correo Electronico
+                        <input type="email" name="mail">
+                    </label>
+                   </div>
+                   <div>
+                    <label class="label" for="telefono"> Télefono
+                        <input type="number" name="telefono">
+                    </label>
+                   </div>
+                   <div>
+                    <label class="label" for="mensaje"> Mensaje
+                        <textarea name="mensaje" placeholder="Escriba aqui su mensaje..."></textarea>
+                    </label>
+                   </div>
+                   <div class="botones">
+                    <input class="submit boton" type="submit" value="Enviar">
+
+                <div class="submit boton">
+                <a  href="{{url('./')}}">Volver</a>
+                </div>
+                   </div>
+                </form>
+                </div>
+            </div>
+      
+    
      
      @include('partials.footer')
 

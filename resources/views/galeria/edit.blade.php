@@ -37,11 +37,12 @@
                     @enderror
               
                 </div>
-           
-            <input class="submit boton" type="submit" value="Actualizar foto">
+            <div class="botones">
+                <input class="submit boton" type="submit" value="Actualizar foto">
 
-            <div class="submit boton">
+                <div class="submit boton">
                 <a  href="{{url('galeria')}}">Volver</a>
+                </div>
             </div>
             </form>
 

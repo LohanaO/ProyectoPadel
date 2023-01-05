@@ -33,8 +33,9 @@
                     @enderror
               
                 </div>
-           
+           <div class="botones">
             <input class="submit" type="submit" value="Subir foto">
+            </div>
             </form>
 
         </div>

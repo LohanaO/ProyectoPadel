@@ -7,3 +7,11 @@
     }
 }
 
+@mixin input{
+    width: 100%;
+    margin-bottom: 30px;
+    color: #fff;
+    padding: 15px;
+    background: v.$gris-claro;
+    border:3px solid rgba(255,255,255,.2);
+}
