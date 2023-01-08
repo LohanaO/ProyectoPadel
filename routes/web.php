@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\TorneoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::get('galeria/foto', function () {
 
 route::view('contacto/mostrarC','contacto/mostrarC');
 
-
+Route::resource('torneo', TorneoController::class );
 
 
 

@@ -10,7 +10,7 @@
                 <i class="fa-solid fa-chevron-down"></i></a>
             <ul class="submenu">
                 
-                <li class="menu__item"><a href="inscripcion.html" class="menu__link">Inscripcion</a>
+                <li class="menu__item"><a href="{{url('torneo')}}" class="menu__link">Inscripcion</a>
                 </li>
                 <li class="menu__item"><a href="fixture.html" class="menu__link">Fixture</a>
                 </li>
